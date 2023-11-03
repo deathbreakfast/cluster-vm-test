@@ -1,0 +1,16 @@
+---
+kubernetes:
+  children:
+    master:
+      hosts:
+        pb-01:
+          ansible_user: seanorourke
+          ansible_host: 192.168.1.193
+    worker:
+      hosts:
+        pb-02:
+          ansible_user: seanorourke
+          ansible_host: 192.168.1.194
+        pb-03:
+          ansible_user: seanorourke
+          ansible_host: 192.168.1.196
