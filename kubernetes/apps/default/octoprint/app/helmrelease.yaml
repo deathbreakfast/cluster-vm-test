@@ -45,8 +45,8 @@ spec:
         tls:
           - hosts:
               - *host
-    podAnnotations:
-      configmap.reloader.stakater.com/reload: hajimari-settings
+        annotations:
+          hajimari.io/icon: mdi:printer-3d
     persistence:
       data:
         enabled: true
