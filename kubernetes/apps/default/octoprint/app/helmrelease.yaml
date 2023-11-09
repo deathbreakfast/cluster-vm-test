@@ -8,6 +8,7 @@ spec:
   interval: 30m
   chart:
     spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: octoprint
       version: 6.3.1
       sourceRef:
@@ -22,6 +23,9 @@ spec:
       namespaceSelector:
         matchNames:
           - default
+      image:
+        repository: octoprint/octoprint
+        tag: 1.6.0
     ingress:
       main:
         enabled: true
