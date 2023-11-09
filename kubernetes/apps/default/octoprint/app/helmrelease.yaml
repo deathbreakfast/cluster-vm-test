@@ -5,16 +5,22 @@ metadata:
   name: octoprint
   namespace: default
 spec:
-  interval: 30m
+  interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: octoprint
-      version: 6.3.1
+      version: 6.2.0
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
         namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
   values:
     nodeselctor:
       rpi: rpi3b
@@ -24,7 +30,10 @@ spec:
         - default
     image:
       repository: octoprint/octoprint
-      tag: 1.6.0
+      tag: 1.7.3
+      pullPolicy: IfNotPresent
+    env:
+      TZ: 'America/Lost_Angeles'
     ingress:
       main:
         enabled: true
