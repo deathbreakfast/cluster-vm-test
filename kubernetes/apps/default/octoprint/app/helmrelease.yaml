@@ -16,16 +16,15 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
   values:
-    octoprint:
-      nodeselctor:
-        rpi: rpi3b
-        3dprinter: true
-      namespaceSelector:
-        matchNames:
-          - default
-      image:
-        repository: octoprint/octoprint
-        tag: 1.6.0
+    nodeselctor:
+      rpi: rpi3b
+      3dprinter: true
+    namespaceSelector:
+      matchNames:
+        - default
+    image:
+      repository: octoprint/octoprint
+      tag: 1.6.0
     ingress:
       main:
         enabled: true
