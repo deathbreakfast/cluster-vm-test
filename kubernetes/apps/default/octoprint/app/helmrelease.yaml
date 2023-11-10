@@ -34,6 +34,7 @@ spec:
       pullPolicy: IfNotPresent
     env:
       TZ: 'America/Lost_Angeles'
+      OCTOPRINT_PORT: 5000
     ingress:
       main:
         enabled: true
