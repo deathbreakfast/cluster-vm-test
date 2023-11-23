@@ -22,7 +22,7 @@ spec:
     remediation:
       retries: 3
   values:
-    nodeselctor:
+    nodeSelector:
       rpi: rpi3b
       3dprinter: true
     namespaceSelector:
@@ -34,7 +34,7 @@ spec:
       pullPolicy: IfNotPresent
 
     env:
-      TZ: 'America/Lost_Angeles'
+      TZ: 'America/Los_Angeles'
       OCTOPRINT_PORT: 5000
     
     securityContext:
@@ -50,6 +50,16 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/ttyACM0
+    
+    volumeMounts:
+      - name: printer
+        mountPath: /dev/ttyACM0
+    
+    volumes:
+      - name: printer
+        hostPath:
+          path: /dev/ttyACM0
+          type: CharDevice
 
     ingress:
       main:
