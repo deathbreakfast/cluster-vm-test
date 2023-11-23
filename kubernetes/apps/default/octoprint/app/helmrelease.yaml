@@ -32,17 +32,21 @@ spec:
       repository: octoprint/octoprint
       tag: 1.7.3
       pullPolicy: IfNotPresent
+
     env:
       TZ: 'America/Lost_Angeles'
       OCTOPRINT_PORT: 5000
-    additionalVolumeMounts:
-      - name: usb
-        mountPath: /dev/serial
+    
+    persistence:
+      data:
+        enabled: true
+        existingClaim: octoprint-data
+        mountPath: /octoprint
+      printer:
+        enabled: false
+        type: hostPath
+        hostPath: /dev/ttyUSB0
 
-    additionalVolumes:
-      - name: usb
-        hostPath:
-          path: /dev/serial
     ingress:
       main:
         enabled: true
