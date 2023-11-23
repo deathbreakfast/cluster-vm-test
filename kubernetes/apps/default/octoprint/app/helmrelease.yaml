@@ -62,7 +62,7 @@ spec:
           hajimari.io/icon: mdi:printer-3d
     nodeSelector:
       rpi: rpi3b
-      3dprinter: true
+      3dprinter: "true"
 
     # affinity:
     #   nodeAffinity:
