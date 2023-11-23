@@ -35,6 +35,14 @@ spec:
     env:
       TZ: 'America/Lost_Angeles'
       OCTOPRINT_PORT: 5000
+    additionalVolumeMounts:
+      - name: usb
+        mountPath: /dev/serial
+
+    additionalVolumes:
+      - name: usb
+        hostPath:
+          path: /dev/serial
     ingress:
       main:
         enabled: true
