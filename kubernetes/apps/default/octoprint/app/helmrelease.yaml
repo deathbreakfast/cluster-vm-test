@@ -21,13 +21,20 @@ spec:
   upgrade:
     remediation:
       retries: 3
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: rpi
+            operator: In
+            values:
+              - rpi3b
+          - key: 3dprinter
+            operator: In
+            values:
+              - "true"
   values:
-    nodeSelector:
-      rpi: rpi3b
-      3dprinter: true
-    namespaceSelector:
-      matchNames:
-        - default
     image:
       repository: octoprint/octoprint
       tag: 1.9.3
