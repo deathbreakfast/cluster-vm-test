@@ -60,17 +60,20 @@ spec:
               - *host
         annotations:
           hajimari.io/icon: mdi:printer-3d
+    nodeSelctor:
+      rpi: rpi3b
+      3dprinter: true
 
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-          - matchExpressions:
-            - key: rpi
-              operator: In
-              values:
-              - "rpi3b"
-            - key: 3dprinter
-              operator: In
-              values:
-              - "true"
+    # affinity:
+    #   nodeAffinity:
+    #     requiredDuringSchedulingIgnoredDuringExecution:
+    #       nodeSelectorTerms:
+    #       - matchExpressions:
+    #         - key: rpi
+    #           operator: In
+    #           values:
+    #           - "rpi3b"
+    #         - key: 3dprinter
+    #           operator: In
+    #           values:
+    #           - "true"
