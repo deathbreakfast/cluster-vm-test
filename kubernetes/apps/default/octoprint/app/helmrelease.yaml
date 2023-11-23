@@ -30,7 +30,7 @@ spec:
         - default
     image:
       repository: octoprint/octoprint
-      tag: 1.7.3
+      tag: 1.9.3
       pullPolicy: IfNotPresent
 
     env:
