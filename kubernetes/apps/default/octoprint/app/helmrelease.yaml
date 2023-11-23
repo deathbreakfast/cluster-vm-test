@@ -37,6 +37,10 @@ spec:
       TZ: 'America/Lost_Angeles'
       OCTOPRINT_PORT: 5000
     
+    securityContext:
+      # -- (bool) Privileged securityContext may be required if USB devics are accessed directly through the host machine
+      privileged: true
+    
     persistence:
       data:
         enabled: true
