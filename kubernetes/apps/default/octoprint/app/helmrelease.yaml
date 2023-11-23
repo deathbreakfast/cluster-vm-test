@@ -49,17 +49,8 @@ spec:
       printer:
         enabled: true
         type: hostPath
-        hostPath: /dev/ttyACM0
-    
-    volumeMounts:
-      - name: printer
-        mountPath: /dev/ttyACM0
-    
-    volumes:
-      - name: printer
-        hostPath:
-          path: /dev/ttyACM0
-          type: CharDevice
+        hostPath: /dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_i3_MK3_CZPX0321X004XK45917-if00
+        mountPath: /dev/ttyUSB0
 
     ingress:
       main:
