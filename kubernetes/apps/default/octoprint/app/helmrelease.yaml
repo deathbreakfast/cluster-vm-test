@@ -43,7 +43,7 @@ spec:
         existingClaim: octoprint-data
         mountPath: /octoprint
       printer:
-        enabled: false
+        enabled: true
         type: hostPath
         hostPath: /dev/ttyUSB0
 
