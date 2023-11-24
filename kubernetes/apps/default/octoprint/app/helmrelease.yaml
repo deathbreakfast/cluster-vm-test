@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: octoprint
   namespace: default
+
 spec:
   interval: 5m
   chart:
@@ -14,13 +15,16 @@ spec:
         kind: HelmRepository
         name: k8s-at-home-charts
         namespace: flux-system
+
   install:
     createNamespace: true
     remediation:
       retries: 3
+
   upgrade:
     remediation:
       retries: 3
+
   values:
     image:
       repository: octoprint/octoprint
@@ -64,17 +68,9 @@ spec:
     nodeSelector:
       rpi: rpi3b
       3dprinter: yes
-
-    # affinity:
-    #   nodeAffinity:
-    #     requiredDuringSchedulingIgnoredDuringExecution:
-    #       nodeSelectorTerms:
-    #       - matchExpressions:
-    #         - key: rpi
-    #           operator: In
-    #           values:
-    #           - "rpi3b"
-    #         - key: 3dprinter
-    #           operator: In
-    #           values:
-    #           - "true"
+    
+    tolerations:
+    - key: "lowresarm"
+      operator: "Equal"
+      value: "yes"
+      effect: "NoSchedule"
