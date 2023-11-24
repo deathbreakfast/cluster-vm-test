@@ -40,6 +40,14 @@ spec:
       operator: "Equal"
       value: "yes"
       effect: "NoSchedule"
+    
+    resources:
+      requests:
+        cpu: 200m
+        memory: 200Mi
+      limits:
+        cpu: 500m
+        memory: 200Mi
 
     env:
       TZ: 'America/Los_Angeles'
