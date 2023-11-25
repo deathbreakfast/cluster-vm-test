@@ -32,7 +32,8 @@ spec:
       pullPolicy: IfNotPresent
 
     nodeSelector:
-      3dprinter: yes
+      rpi: RPi3b
+      3dprinter: Prusai3MK3Sp
     
     env:
       TZ: 'America/Los_Angeles'
