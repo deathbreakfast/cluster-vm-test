@@ -32,14 +32,7 @@ spec:
       pullPolicy: IfNotPresent
 
     nodeSelector:
-      rpi: rpi3b
       3dprinter: yes
-    
-    tolerations:
-    - key: "lowresarm"
-      operator: "Equal"
-      value: "yes"
-      effect: "NoSchedule"
     
     resources:
       requests:
