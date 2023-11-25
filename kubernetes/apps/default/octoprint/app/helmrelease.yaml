@@ -34,14 +34,6 @@ spec:
     nodeSelector:
       3dprinter: yes
     
-    resources:
-      requests:
-        cpu: 200m
-        memory: 200Mi
-      limits:
-        cpu: 500m
-        memory: 200Mi
-
     env:
       TZ: 'America/Los_Angeles'
       OCTOPRINT_PORT: 5000
