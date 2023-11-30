@@ -32,8 +32,8 @@ spec:
       pullPolicy: IfNotPresent
 
     nodeSelector:
-      rpi: RPi3b
-      3dprinter: Prusai3MK3Sp
+      # 3dprinter: Prusai3MK3Sp
+      kubernetes.io/hostname: pb-03
     
     env:
       TZ: 'America/Los_Angeles'
