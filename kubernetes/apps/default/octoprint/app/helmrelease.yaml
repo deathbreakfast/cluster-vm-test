@@ -33,7 +33,15 @@ spec:
 
     nodeSelector:
       # 3dprinter: Prusai3MK3Sp
-      kubernetes.io/hostname: pb-02
+      kubernetes.io/hostname: pb-03
+    
+    resources:
+      requests:
+        cpu: 200m
+        memory: 200Mi
+      limits:
+        cpu: 500m
+        memory: 200Mi
     
     env:
       TZ: 'America/Los_Angeles'
