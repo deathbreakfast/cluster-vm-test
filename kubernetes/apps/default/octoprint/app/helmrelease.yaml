@@ -33,7 +33,7 @@ spec:
 
     nodeSelector:
       # 3dprinter: Prusai3MK3Sp
-      kubernetes.io/hostname: pb-03
+      kubernetes.io/hostname: pb-02
     
     env:
       TZ: 'America/Los_Angeles'
