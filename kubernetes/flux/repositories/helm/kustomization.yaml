@@ -18,4 +18,5 @@ resources:
   - ./metrics-server.yaml
   - ./prometheus-community.yaml
   - ./stakater.yaml
+  - ./twuni.yaml
   - ./weave-gitops.yaml
